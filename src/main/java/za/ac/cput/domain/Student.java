@@ -18,7 +18,7 @@ public class Student extends User{
     }
 
     public static class Builder{
-        private Long userId;
+        private String userId;
         private String name;
         private String email;
         private String passwordHash;
@@ -29,7 +29,7 @@ public class Student extends User{
         private String department;
         private int yearOfStudy;
 
-        public Builder setUserId(Long userId){
+        public Builder setUserId(String userId){
             this.userId = userId;
             return this;
         }
@@ -68,6 +68,9 @@ public class Student extends User{
         public Builder setYearOfStudy(int yearOfStudy){
             this.yearOfStudy = yearOfStudy;
             return this;
+        }
+        public Student build() {
+            return new Student(this);
         }
     }
 }
